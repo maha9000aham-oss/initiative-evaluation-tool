@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>أداة متابعة وتقويم المبادرة</title>
+
+<style>
+
+:root{
+
+--primary:#123b6d;
+
+--secondary:#1e5aa8;
+
+--gold:#d4a24c;
+
+--bg:#f4f7fb;
+
+--card:#ffffff;
+
+--text:#1f2937;
+
+--muted:#6b7280;
+
+--line:#dbe3ef;
+
+--success:#16a34a;
+
+--danger:#dc2626;
+
+--shadow:0 12px 35px rgba(18,59,109,.12);
+
+}
+
+*{box-sizing:border-box}
+
+body{
+
+margin:0;
+
+font-family:Tahoma,Arial,sans-serif;
+
+background:linear-gradient(180deg,#eef4fb,#f9fbff);
+
+color:var(--text);
+
+}
+
+.wrap{
+
+width:min(1100px,94%);
+
+margin:24px auto 40px;
+
+}
+
+.hero{
+
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+color:#fff;
+
+padding:26px;
+
+border-radius:24px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+margin-bottom:20px;
+
+}
+
+.hero h1{margin:0 0 8px;font-size:34px}
+
+.hero p{margin:0;color:#e8efff}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:18px;
+
+}
+
+.card{
+
+background:var(--card);
+
+border:1px solid var(--line);
+
+border-radius:22px;
+
+padding:18px;
+
+box-shadow:var(--shadow);
+
+}
+
+h2{
+
+margin:0 0 14px;
+
+font-size:22px;
+
+color:var(--primary);
+
+}
+
+label{
+
+display:block;
+
+font-size:14px;
+
+margin:10px 0 6px;
+
+font-weight:700;
+
+}
+
+input,select,textarea{
+
+width:100%;
+
+padding:12px;
+
+border:1px solid var(--line);
+
+border-radius:14px;
+
+font-size:15px;
+
+background:#fff;
+
+}
+
+textarea{min-height:90px;resize:vertical}
+
+.row2{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+}
+
+.btn{
+
+margin-top:14px;
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:14px;
+
+background:linear-gradient(135deg,var(--gold),#e3bc73);
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.btn:hover{filter:brightness(1.03)}
+
+.kpis{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+margin-top:12px;
+
+}
+
+.metric{
+
+background:#f8fbff;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:14px;
+
+text-align:center;
+
+}
+
+.metric .num{
+
+font-size:28px;
+
+font-weight:700;
+
+color:var(--primary);
+
+}
+
+.metric .lab{
+
+font-size:13px;
+
+color:var(--muted);
+
+margin-top:4px;
+
+}
+
+.resultBox{
+
+margin-top:14px;
+
+padding:14px;
+
+border-radius:18px;
+
+background:#f8fbff;
+
+border:1px solid var(--line);
+
+line-height:1.9;
+
+}
+
+.good{color:var(--success);font-weight:700}
+
+.bad{color:var(--danger);font-weight:700}
+
+.small{
+
+font-size:13px;color:var(--muted)
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:12px;
+
+font-size:14px;
+
+}
+
+th,td{
+
+border:1px solid var(--line);
+
+padding:10px;
+
+text-align:center;
+
+}
+
+th{
+
+background:#eef5ff;
+
+color:var(--primary);
+
+}
+
+@media(max-width:900px){
+
+.grid{grid-template-columns:1fr}
+
+.row2,.kpis{grid-template-columns:1fr}
+
+.hero h1{font-size:28px}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<div class="hero">
+
+<h1>أداة متابعة وتقويم المبادرة</h1>
+
+<p>قياس التنفيذ والأثر أثناء التطبيق وبعده وفق المنهجية العلمية</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>إدخال بيانات التقويم</h2>
+
+<label>اسم المبادرة</label>
+
+<input id="name" value="منظومة منصات كريمة بنت همام الذكية">
+
+<div class="row2">
+
+<div>
+
+<label>مرحلة القياس</label>
+
+<select id="stage">
+
+<option>أثناء التنفيذ</option>
+
+<option>بعد التنفيذ</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>نسبة الإنجاز %</label>
+
+<input id="progress" type="number" min="0" max="100" value="85">
+
+</div>
+
+</div>
+
+<div class="row2">
+
+<div>
+
+<label>رضا المستفيدين %</label>
+
+<input id="satisfaction" type="number" min="0" max="100" value="90">
+
+</div>
+
+<div>
+
+<label>تحقق الأهداف %</label>
+
+<input id="goals" type="number" min="0" max="100" value="88">
+
+</div>
+
+</div>
+
+<label>عدد المستفيدين</label>
+
+<input id="beneficiaries" type="number" min="0" value="350">
+
+<label>أبرز الملاحظات</label>
+
+<textarea id="notes">ارتفاع التفاعل وتحسن سرعة الإنجاز مع حاجة بسيطة لمزيد من التدريب.</textarea>
+
+<button class="btn" onclick="analyze()">تحليل النتائج وإصدار التقرير</button>
+
+<div id="report" class="resultBox"></div>
+
+</div>
+
+<div class="card">
+
+<h2>لوحة المؤشرات</h2>
+
+<div class="kpis">
+
+<div class="metric">
+
+<div class="num" id="m1">0%</div>
+
+<div class="lab">المتوسط العام</div>
+
+</div>
+
+<div class="metric">
+
+<div class="num" id="m2">0</div>
+
+<div class="lab">المستفيدون</div>
+
+</div>
+
+<div class="metric">
+
+<div class="num" id="m3">--</div>
+
+<div class="lab">الحكم العام</div>
+
+</div>
+
+<div class="metric">
+
+<div class="num" id="m4">--</div>
+
+<div class="lab">التوصية</div>
+
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>المؤشر</th>
+
+<th>القيمة</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr><td>نسبة الإنجاز</td><td id="t1">0%</td></tr>
+
+<tr><td>الرضا</td><td id="t2">0%</td></tr>
+
+<tr><td>تحقق الأهداف</td><td id="t3">0%</td></tr>
+
+</tbody>
+
+</table>
+
+<p class="small">يمكن استخدام الأداة دوريًا أثناء التنفيذ أو بعد انتهاء المبادرة.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function analyze(){
+
+const name=document.getElementById('name').value;
+
+const stage=document.getElementById('stage').value;
+
+const progress=+document.getElementById('progress').value||0;
+
+const satisfaction=+document.getElementById('satisfaction').value||0;
+
+const goals=+document.getElementById('goals').value||0;
+
+const beneficiaries=+document.getElementById('beneficiaries').value||0;
+
+const notes=document.getElementById('notes').value;
+
+const avg=Math.round((progress+satisfaction+goals)/3);
+
+let status='ممتاز';
+
+let cls='good';
+
+let rec='استمرار التوسع';
+
+if(avg<85){status='جيد جداً'; rec='تحسين بعض الجوانب';}
+
+if(avg<70){status='جيد'; rec='خطة تطوير عاجلة';}
+
+if(avg<50){status='منخفض'; cls='bad'; rec='إعادة المعالجة';}
+
+document.getElementById('m1').textContent=avg+'%';
+
+document.getElementById('m2').textContent=beneficiaries;
+
+document.getElementById('m3').textContent=status;
+
+document.getElementById('m3').className='num '+cls;
+
+document.getElementById('m4').textContent=rec;
+
+document.getElementById('t1').textContent=progress+'%';
+
+document.getElementById('t2').textContent=satisfaction+'%';
+
+document.getElementById('t3').textContent=goals+'%';
+
+document.getElementById('report').innerHTML=`
+
+<b>تقرير التقويم:</b><br>
+
+المبادرة: ${name}<br>
+
+مرحلة القياس: ${stage}<br>
+
+متوسط الأداء العام: <span class="${cls}">${avg}% (${status})</span><br>
+
+عدد المستفيدين: ${beneficiaries}<br>
+
+التوصية: <b>${rec}</b><br>
+
+الملاحظات: ${notes}
+
+`;
+
+}
+
+analyze();
+
+</script>
+
+</body>
+
+</html>
