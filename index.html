@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>خطة التحسين والتطوير</title>
+
+  <style>
+
+    :root{
+
+      --primary:#123b6d;
+
+      --primary2:#1d5ea8;
+
+      --gold:#d4a24c;
+
+      --bg:#f4f7fb;
+
+      --card:#ffffff;
+
+      --text:#1f2937;
+
+      --muted:#6b7280;
+
+      --border:#dbe3ef;
+
+      --green:#16a34a;
+
+      --orange:#ea580c;
+
+      --red:#dc2626;
+
+      --purple:#7c3aed;
+
+      --cyan:#0891b2;
+
+      --shadow:0 14px 36px rgba(18,59,109,.12);
+
+      --radius:22px;
+
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+
+      margin:0;
+
+      font-family:Tahoma,Arial,sans-serif;
+
+      background:linear-gradient(180deg,#edf3fb 0%,#f9fbff 100%);
+
+      color:var(--text);
+
+    }
+
+    .wrap{
+
+      width:min(1450px,95%);
+
+      margin:24px auto 40px;
+
+    }
+
+    .hero{
+
+      background:linear-gradient(135deg,var(--primary),var(--primary2));
+
+      color:#fff;
+
+      padding:28px 24px;
+
+      border-radius:28px;
+
+      text-align:center;
+
+      box-shadow:var(--shadow);
+
+      margin-bottom:22px;
+
+    }
+
+    .hero h1{
+
+      margin:0 0 8px;
+
+      font-size:clamp(28px,4vw,44px);
+
+      line-height:1.4;
+
+    }
+
+    .hero p{
+
+      margin:0;
+
+      color:#e8efff;
+
+      font-size:16px;
+
+      line-height:1.9;
+
+    }
+
+    .top-tools{
+
+      display:grid;
+
+      grid-template-columns:1.2fr auto auto;
+
+      gap:12px;
+
+      margin-bottom:18px;
+
+      align-items:center;
+
+    }
+
+    .search-box input{
+
+      width:100%;
+
+      padding:14px 16px;
+
+      border:1px solid var(--border);
+
+      border-radius:16px;
+
+      background:#fff;
+
+      font-size:15px;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .tool-btn{
+
+      border:none;
+
+      padding:14px 18px;
+
+      border-radius:16px;
+
+      cursor:pointer;
+
+      font:inherit;
+
+      font-weight:700;
+
+      background:#fff;
+
+      color:var(--primary);
+
+      border:1px solid var(--border);
+
+      box-shadow:var(--shadow);
+
+      white-space:nowrap;
+
+    }
+
+    .tool-btn.primary{
+
+      background:linear-gradient(135deg,var(--gold),#e1bc72);
+
+      color:#fff;
+
+      border:none;
+
+    }
+
+    .intro{
+
+      background:#fff;
+
+      border:1px solid var(--border);
+
+      border-radius:22px;
+
+      padding:18px;
+
+      box-shadow:var(--shadow);
+
+      margin-bottom:18px;
+
+      line-height:1.9;
+
+      color:var(--muted);
+
+    }
+
+    .accordion{
+
+      display:grid;
+
+      gap:14px;
+
+    }
+
+    .item{
+
+      background:var(--card);
+
+      border:1px solid var(--border);
+
+      border-radius:22px;
+
+      box-shadow:var(--shadow);
+
+      overflow:hidden;
+
+    }
+
+    .item-header{
+
+      width:100%;
+
+      border:none;
+
+      background:#fff;
+
+      padding:18px;
+
+      display:flex;
+
+      align-items:center;
+
+      gap:14px;
+
+      cursor:pointer;
+
+      text-align:right;
+
+    }
+
+    .icon{
+
+      width:58px;
+
+      height:58px;
+
+      min-width:58px;
+
+      border-radius:18px;
+
+      display:grid;
+
+      place-items:center;
+
+      color:#fff;
+
+      font-size:28px;
+
+      font-weight:700;
+
+      box-shadow:0 10px 22px rgba(0,0,0,.12);
+
+    }
+
+    .c1{background:linear-gradient(135deg,var(--green),#4ade80)}
+
+    .c2{background:linear-gradient(135deg,var(--orange),#fb923c)}
+
+    .c3{background:linear-gradient(135deg,var(--purple),#a78bfa)}
+
+    .c4{background:linear-gradient(135deg,var(--red),#f87171)}
+
+    .c5{background:linear-gradient(135deg,var(--cyan),#38bdf8)}
+
+    .c6{background:linear-gradient(135deg,var(--gold),#e7c47c)}
+
+    .c7{background:linear-gradient(135deg,#0f766e,#2dd4bf)}
+
+    .c8{background:linear-gradient(135deg,#4f46e5,#818cf8)}
+
+    .c9{background:linear-gradient(135deg,#be185d,#f472b6)}
+
+    .c10{background:linear-gradient(135deg,#334155,#94a3b8)}
+
+    .head-text{
+
+      flex:1;
+
+      min-width:0;
+
+    }
+
+    .head-text h2{
+
+      margin:0 0 4px;
+
+      font-size:22px;
+
+      color:var(--primary);
+
+      line-height:1.5;
+
+    }
+
+    .head-text p{
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:14px;
+
+    }
+
+    .count-badge{
+
+      background:#eef5ff;
+
+      color:var(--primary2);
+
+      border:1px solid #d8e7fb;
+
+      padding:6px 10px;
+
+      border-radius:999px;
+
+      font-size:12px;
+
+      font-weight:700;
+
+      margin-left:6px;
+
+    }
+
+    .toggle{
+
+      font-size:28px;
+
+      color:var(--primary);
+
+      width:32px;
+
+      text-align:center;
+
+      font-weight:700;
+
+    }
+
+    .item-content{
+
+      display:none;
+
+      padding:0 18px 18px;
+
+      background:linear-gradient(180deg,#fff,#fbfdff);
+
+      border-top:1px solid var(--border);
+
+    }
+
+    .item.active .item-content{display:block}
+
+    .content-tools{
+
+      display:flex;
+
+      gap:10px;
+
+      justify-content:flex-start;
+
+      flex-wrap:wrap;
+
+      padding-top:14px;
+
+      margin-bottom:12px;
+
+    }
+
+    .mini-btn{
+
+      border:none;
+
+      padding:10px 12px;
+
+      border-radius:12px;
+
+      cursor:pointer;
+
+      font:inherit;
+
+      font-size:13px;
+
+      font-weight:700;
+
+      background:#eef5ff;
+
+      color:var(--primary);
+
+    }
+
+    .sections{
+
+      display:grid;
+
+      grid-template-columns:repeat(2,1fr);
+
+      gap:14px;
+
+    }
+
+    .box{
+
+      border:1px solid var(--border);
+
+      border-radius:18px;
+
+      padding:14px;
+
+      background:#fff;
+
+      min-height:100%;
+
+    }
+
+    .box h3{
+
+      margin:0 0 10px;
+
+      font-size:18px;
+
+      color:var(--primary);
+
+    }
+
+    .box.goal{background:#f8fbff;border-right:5px solid var(--gold)}
+
+    .box.actions{background:#fbfffc;border-right:5px solid var(--green)}
+
+    .box.kpi{background:#fff8f1;border-right:5px solid var(--orange)}
+
+    .box.impact{background:#faf5ff;border-right:5px solid var(--purple)}
+
+    ul{
+
+      margin:0;
+
+      padding:0 20px 0 0;
+
+    }
+
+    li{
+
+      margin-bottom:8px;
+
+      line-height:1.9;
+
+      font-size:14px;
+
+    }
+
+    .copy-area{display:none}
+
+    .footer{
+
+      margin-top:24px;
+
+      background:linear-gradient(135deg,var(--primary),#0c2a4b);
+
+      color:#fff;
+
+      border-radius:24px;
+
+      padding:20px;
+
+      text-align:center;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .footer strong{
+
+      display:block;
+
+      font-size:22px;
+
+      margin-bottom:6px;
+
+    }
+
+    .footer span{
+
+      color:#e5efff;
+
+      font-size:15px;
+
+    }
+
+    .hidden{display:none !important}
+
+    @media(max-width:980px){
+
+      .top-tools{grid-template-columns:1fr}
+
+      .sections{grid-template-columns:1fr}
+
+    }
+
+    @media print{
+
+      body{background:#fff}
+
+      .hero,.item,.intro,.footer,.search-box input,.tool-btn{box-shadow:none}
+
+      .top-tools,.content-tools{display:none}
+
+      .item-content{display:block !important}
+
+      .wrap{width:100%;margin:0}
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <section class="hero">
+
+      <h1>خطة التحسين والتطوير للمبادرة</h1>
+
+      <p>منظومة خطط تفصيلية مترابطة لرفع كفاءة التنفيذ وتحسين جودة المخرجات وتعزيز الاستدامة واتخاذ القرار المبني على البيانات</p>
+
+    </section>
+
+    <section class="top-tools">
+
+      <div class="search-box">
+
+        <input type="text" id="searchInput" placeholder="ابحثي عن خطة أو هدف أو إجراء..." onkeyup="filterItems()">
+
+      </div>
+
+      <button class="tool-btn primary" onclick="toggleAll(true)">فتح الكل</button>
+
+      <button class="tool-btn" onclick="toggleAll(false)">إغلاق الكل</button>
+
+    </section>
+
+    <section class="intro">
+
+      تتضمن المبادرة خططًا واضحة ومتكاملة للتحسين والتطوير المستمر، تُبنى على نتائج المتابعة والتقويم، وتركز على معالجة التحديات، وتحديث الأدوات والممارسات، ورفع جودة المخرجات، وتعزيز الكفاءة التشغيلية والمؤسسية بما يضمن استدامة الأثر ونمو المبادرة.
+
+    </section>
+
+    <section class="accordion">
+
+      <article class="item" data-search="تحسين الأداء التشغيلي سرعة الإنجاز كفاءة تشغيل مهام تنسيق">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c1">⚙️</div>
+
+          <div class="head-text">
+
+            <h2>خطة تحسين الأداء التشغيلي</h2>
+
+            <p>رفع كفاءة التنفيذ اليومي وتسريع الإنجاز وتحسين تدفق العمل</p>
+
+          </div>
+
+          <span class="count-badge">تشغيل</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>رفع كفاءة الإجراءات اليومية.</li>
+
+                <li>تقليل زمن الإنجاز.</li>
+
+                <li>تحسين التنسيق بين فرق العمل.</li>
+
+                <li>معالجة التعثرات التشغيلية بسرعة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>تبسيط خطوات العمل وإلغاء التكرار غير الضروري.</li>
+
+                <li>تحديد المسؤوليات بدقة لكل نشاط.</li>
+
+                <li>إعادة توزيع المهام حسب الكفاءة والقدرة.</li>
+
+                <li>إنشاء آلية متابعة يومية للملاحظات التشغيلية.</li>
+
+                <li>تطوير مسار اعتماد أسرع للإجراءات الحرجة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>زمن الإنجاز.</li>
+
+                <li>نسبة الالتزام بالخطة التشغيلية.</li>
+
+                <li>معدل إغلاق الملاحظات.</li>
+
+                <li>عدد حالات التعثر المتكررة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>تسريع الإنجاز.</li>
+
+                <li>رفع إنتاجية الفرق.</li>
+
+                <li>تقليل الهدر الزمني.</li>
+
+                <li>تحسين انتظام التنفيذ.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة تحسين الأداء التشغيلي
+
+الهدف: رفع كفاءة التنفيذ اليومي وتسريع الإنجاز وتحسين تدفق العمل.
+
+الإجراءات: تبسيط خطوات العمل، تحديد المسؤوليات، إعادة توزيع المهام، متابعة يومية، تطوير مسار اعتماد أسرع.
+
+المؤشرات: زمن الإنجاز، نسبة الالتزام، معدل إغلاق الملاحظات، عدد حالات التعثر.
+
+الأثر المتوقع: تسريع الإنجاز، رفع الإنتاجية، تقليل الهدر، تحسين انتظام التنفيذ.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="تطوير الأدوات التقنية منصات سرعة أمان واجهات تقنية">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c2">💻</div>
+
+          <div class="head-text">
+
+            <h2>خطة تطوير الأدوات التقنية</h2>
+
+            <p>تحديث البيئة التقنية وتحسين الاستقرار والسرعة وسهولة الاستخدام</p>
+
+          </div>
+
+          <span class="count-badge">تقنية</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>تحسين جودة البيئة التقنية للمبادرة.</li>
+
+                <li>رفع سرعة وكفاءة المنصات.</li>
+
+                <li>تعزيز الأمان والاعتمادية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>تحديث المنصات والأدوات التقنية دوريًا.</li>
+
+                <li>تحسين واجهات المستخدم وتجربة الاستخدام.</li>
+
+                <li>معالجة الأعطال الفنية ورفع الاستقرار.</li>
+
+                <li>تفعيل النسخ الاحتياطي والاستعادة السريعة.</li>
+
+                <li>اختبار الأداء والأمان قبل كل تحديث.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>عدد الأعطال.</li>
+
+                <li>سرعة الاستجابة.</li>
+
+                <li>رضا المستخدمين عن المنصة.</li>
+
+                <li>معدل التوقف أو الانقطاع.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>استقرار أعلى.</li>
+
+                <li>سرعة استخدام أفضل.</li>
+
+                <li>أمان تقني أقوى.</li>
+
+                <li>تقليل المشكلات المتكررة.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة تطوير الأدوات التقنية
+
+الهدف: تحديث البيئة التقنية وتحسين الاستقرار والسرعة والأمان.
+
+الإجراءات: تحديث المنصات، تحسين الواجهات، معالجة الأعطال، النسخ الاحتياطي، اختبارات الأداء والأمان.
+
+المؤشرات: عدد الأعطال، سرعة الاستجابة، رضا المستخدمين، معدل التوقف.
+
+الأثر المتوقع: استقرار أعلى، سرعة أفضل، أمان أقوى، تقليل المشكلات.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="التدريب بناء القدرات تمكين مهارات برامج تدريب أثر التدريب">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c3">🎓</div>
+
+          <div class="head-text">
+
+            <h2>خطة بناء القدرات والتدريب</h2>
+
+            <p>رفع الجاهزية الرقمية والمهنية للمستفيدين وتحسين الاستخدام الفعلي</p>
+
+          </div>
+
+          <span class="count-badge">تدريب</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>رفع جاهزية المستفيدين.</li>
+
+                <li>تنمية المهارات الرقمية.</li>
+
+                <li>تحسين كفاءة الاستخدام والتطبيق.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>تحليل الاحتياج التدريبي بحسب الفئات.</li>
+
+                <li>تصميم برامج وورش تدريبية متخصصة.</li>
+
+                <li>إعداد أدلة استخدام ومصادر مساندة.</li>
+
+                <li>تطبيق قياس قبلي وبعدي للتدريب.</li>
+
+                <li>متابعة أثر التدريب في الميدان.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>نسبة الحضور.</li>
+
+                <li>نتائج القياس القبلي والبعدي.</li>
+
+                <li>مستوى الإتقان.</li>
+
+                <li>أثر التدريب على الأداء.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>تحسن مستوى المهارات.</li>
+
+                <li>تقليل أخطاء الاستخدام.</li>
+
+                <li>رفع جودة التطبيق.</li>
+
+                <li>زيادة التفاعل مع المبادرة.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة بناء القدرات والتدريب
+
+الهدف: رفع الجاهزية الرقمية والمهنية للمستفيدين.
+
+الإجراءات: تحليل الاحتياج، تصميم برامج تدريبية، إعداد أدلة، قياس قبلي وبعدي، متابعة الأثر.
+
+المؤشرات: الحضور، نتائج القياس، الإتقان، أثر التدريب.
+
+الأثر المتوقع: تحسن المهارات، تقليل الأخطاء، رفع جودة التطبيق، زيادة التفاعل.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="جودة المخرجات محتوى تقارير خدمات دقة تحسين الجودة">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c4">🏆</div>
+
+          <div class="head-text">
+
+            <h2>خطة تحسين جودة المخرجات</h2>
+
+            <p>رفع جودة المحتوى والخدمات والتقارير وتحسين تجربة المستفيد النهائي</p>
+
+          </div>
+
+          <span class="count-badge">جودة</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>رفع جودة النتائج والخدمات المقدمة.</li>
+
+                <li>تقليل الأخطاء وتحسين الدقة.</li>
+
+                <li>تحسين قيمة المخرجات للمستفيدين.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>مراجعة المحتوى والتقارير وفق معايير محددة.</li>
+
+                <li>توحيد النماذج والمخرجات الأساسية.</li>
+
+                <li>تحسين تصميم الخدمات ووضوح المعلومة.</li>
+
+                <li>إجراء تدقيق دوري على الجودة والدقة.</li>
+
+                <li>استثمار التغذية الراجعة في التحسين.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>نسبة الجودة.</li>
+
+                <li>دقة المخرجات.</li>
+
+                <li>انخفاض الأخطاء.</li>
+
+                <li>رضا المستفيدين.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>مخرجات أعلى جودة.</li>
+
+                <li>خدمات أكثر اتساقًا.</li>
+
+                <li>زيادة الثقة في النتائج.</li>
+
+                <li>تحسين الصورة المؤسسية.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة تحسين جودة المخرجات
+
+الهدف: رفع جودة النتائج والخدمات والتقارير.
+
+الإجراءات: مراجعة المحتوى، توحيد النماذج، تحسين الخدمات، تدقيق دوري، استثمار التغذية الراجعة.
+
+المؤشرات: نسبة الجودة، دقة المخرجات، انخفاض الأخطاء، رضا المستفيدين.
+
+الأثر المتوقع: مخرجات أعلى جودة، خدمات أكثر اتساقًا، زيادة الثقة، تحسين الصورة المؤسسية.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="المتابعة التقويم مؤشرات أداء تقارير بيانات قياس">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c5">📊</div>
+
+          <div class="head-text">
+
+            <h2>خطة المتابعة والتقويم</h2>
+
+            <p>تطوير منظومة القياس والتحليل والتقارير لضمان التحسين المبني على البيانات</p>
+
+          </div>
+
+          <span class="count-badge">تقويم</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>ضمان المتابعة الدقيقة للمبادرة.</li>
+
+                <li>تطوير مؤشرات الأداء والقياس.</li>
+
+                <li>تحسين القرارات التطويرية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>تحديث مؤشرات الأداء الكمية والنوعية.</li>
+
+                <li>جمع البيانات بصورة دورية ومنهجية.</li>
+
+                <li>تحليل النتائج ومقارنة المستهدف بالمتحقق.</li>
+
+                <li>إعداد تقارير دورية وختامية دقيقة.</li>
+
+                <li>تفعيل أدوات المتابعة أثناء التنفيذ وبعده.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>انتظام التقارير.</li>
+
+                <li>دقة البيانات.</li>
+
+                <li>نسبة تحقق الأهداف.</li>
+
+                <li>سرعة معالجة الانحرافات.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>وضوح أعلى في النتائج.</li>
+
+                <li>تحسين القرارات.</li>
+
+                <li>استجابة أسرع للملاحظات.</li>
+
+                <li>رفع فاعلية المبادرة.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة المتابعة والتقويم
+
+الهدف: تطوير منظومة القياس والتحليل والتقارير.
+
+الإجراءات: تحديث المؤشرات، جمع البيانات، تحليل النتائج، إعداد تقارير دورية وختامية، تفعيل أدوات المتابعة.
+
+المؤشرات: انتظام التقارير، دقة البيانات، تحقق الأهداف، سرعة المعالجة.
+
+الأثر المتوقع: وضوح أعلى في النتائج، تحسين القرارات، استجابة أسرع، رفع الفاعلية.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="الاتصال التوعية إعلام رسائل مشاركة مجتمع تعليمي">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c6">📣</div>
+
+          <div class="head-text">
+
+            <h2>خطة الاتصال والتوعية</h2>
+
+            <p>تعزيز الوعي بالمبادرة ورفع التفاعل والمشاركة داخل المجتمع التعليمي</p>
+
+          </div>
+
+          <span class="count-badge">اتصال</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>رفع الوعي بالمبادرة وأهدافها.</li>
+
+                <li>تعزيز مشاركة الفئات المستهدفة.</li>
+
+                <li>تحسين الرسائل الإعلامية والتوعوية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>إعداد خطة إعلامية متكاملة للمبادرة.</li>
+
+                <li>نشر رسائل تعريفية وتوعوية متعددة الوسائط.</li>
+
+                <li>تنفيذ لقاءات تعريفية ودورات توجيهية.</li>
+
+                <li>تحديث المحتوى الإعلامي بشكل دوري.</li>
+
+                <li>تخصيص قنوات تواصل مباشرة وسريعة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>نسب الوصول.</li>
+
+                <li>معدل التفاعل.</li>
+
+                <li>مستوى الوعي.</li>
+
+                <li>نسبة المشاركة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>وعي أكبر بالمبادرة.</li>
+
+                <li>ارتفاع المشاركة.</li>
+
+                <li>تحسين الصورة الذهنية.</li>
+
+                <li>دعم التبني المؤسسي.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة الاتصال والتوعية
+
+الهدف: تعزيز الوعي بالمبادرة ورفع التفاعل.
+
+الإجراءات: خطة إعلامية، رسائل تعريفية، لقاءات، تحديث المحتوى، قنوات تواصل سريعة.
+
+المؤشرات: الوصول، التفاعل، مستوى الوعي، نسبة المشاركة.
+
+الأثر المتوقع: وعي أكبر، مشاركة أعلى، صورة ذهنية أفضل، دعم التبني المؤسسي.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="إدارة المخاطر بدائل استجابة طوارئ تعثر معالجة">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c7">⚠️</div>
+
+          <div class="head-text">
+
+            <h2>خطة إدارة المخاطر</h2>
+
+            <p>التنبؤ بالمخاطر وتجهيز البدائل والاستجابة السريعة لضمان الاستمرارية</p>
+
+          </div>
+
+          <span class="count-badge">مخاطر</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>تقليل أثر المخاطر على المبادرة.</li>
+
+                <li>ضمان الاستمرارية التشغيلية.</li>
+
+                <li>رفع الجاهزية للاستجابة السريعة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>حصر المخاطر وتصنيفها حسب الأولوية.</li>
+
+                <li>تقدير الأثر والاحتمالية لكل خطر.</li>
+
+                <li>إعداد خطط بديلة واستجابات فورية.</li>
+
+                <li>تحديد المسؤوليات عند التعثر.</li>
+
+                <li>مراجعة المخاطر دوريًا وتحديثها.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>عدد المخاطر المعالجة.</li>
+
+                <li>زمن الاستجابة.</li>
+
+                <li>انخفاض حالات التعثر.</li>
+
+                <li>فعالية الحلول البديلة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>انخفاض التعثر.</li>
+
+                <li>استجابة أسرع للأزمات.</li>
+
+                <li>رفع الاعتمادية التشغيلية.</li>
+
+                <li>استمرارية أقوى للمبادرة.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة إدارة المخاطر
+
+الهدف: تقليل أثر المخاطر وضمان الاستمرارية.
+
+الإجراءات: حصر المخاطر، تقدير الأثر، إعداد بدائل، تحديد المسؤوليات، مراجعة دورية.
+
+المؤشرات: عدد المخاطر المعالجة، زمن الاستجابة، انخفاض التعثر، فعالية البدائل.
+
+الأثر المتوقع: انخفاض التعثر، استجابة أسرع، رفع الاعتمادية، استمرارية أقوى.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="الاستدامة التوسع سنوية نقل تجربة شراكات توسع مؤسسي">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c8">🚀</div>
+
+          <div class="head-text">
+
+            <h2>خطة الاستدامة والتوسع</h2>
+
+            <p>ضمان استمرار المبادرة ونمو أثرها وتوسيع نطاقها بصورة منهجية</p>
+
+          </div>
+
+          <span class="count-badge">استدامة</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>ضمان استمرارية المبادرة.</li>
+
+                <li>التوسع التدريجي في الخدمات.</li>
+
+                <li>تعظيم الأثر المؤسسي والتعليمي.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>توثيق التجربة وبناء خطة سنوية مستدامة.</li>
+
+                <li>تدريب كوادر بديلة للتشغيل.</li>
+
+                <li>إدراج المبادرة ضمن خطط المدرسة.</li>
+
+                <li>التوسع في خدمات ومنصات جديدة.</li>
+
+                <li>بناء شراكات داعمة ونقل التجربة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>استمرار التشغيل.</li>
+
+                <li>عدد الخدمات الجديدة.</li>
+
+                <li>نمو عدد المستفيدين.</li>
+
+                <li>فرص التوسع والشراكات.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>استدامة مؤسسية قوية.</li>
+
+                <li>توسع نوعي منظم.</li>
+
+                <li>نقل التجربة لبيئات أخرى.</li>
+
+                <li>زيادة الأثر طويل المدى.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة الاستدامة والتوسع
+
+الهدف: ضمان استمرار المبادرة ونمو أثرها.
+
+الإجراءات: توثيق التجربة، خطة سنوية، تدريب بدائل، إدراج المبادرة في الخطط، التوسع، الشراكات.
+
+المؤشرات: استمرار التشغيل، عدد الخدمات الجديدة، نمو المستفيدين، فرص التوسع.
+
+الأثر المتوقع: استدامة قوية، توسع منظم، نقل التجربة، زيادة الأثر طويل المدى.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="الابتكار التحول الرقمي ذكاء اصطناعي أتمتة لوحات بيانات">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c9">🤖</div>
+
+          <div class="head-text">
+
+            <h2>خطة الابتكار والتحول الرقمي</h2>
+
+            <p>تحديث العمل بحلول ذكية وأتمتة الإجراءات وتحسين القرار المؤسسي</p>
+
+          </div>
+
+          <span class="count-badge">ابتكار</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>رفع كفاءة العمل بالحلول الحديثة.</li>
+
+                <li>تعزيز الأتمتة والتحليل الذكي.</li>
+
+                <li>تحسين القرار المبني على البيانات.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>إدخال حلول ذكاء اصطناعي داعمة.</li>
+
+                <li>أتمتة الإجراءات المتكررة.</li>
+
+                <li>تطوير لوحات بيانات ومؤشرات ذكية.</li>
+
+                <li>تجريب أدوات رقمية جديدة وفق الحاجة.</li>
+
+                <li>تحسين التكامل بين الأنظمة والمنصات.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>عدد الحلول الذكية المطبقة.</li>
+
+                <li>نسبة الأتمتة.</li>
+
+                <li>تقليل الزمن.</li>
+
+                <li>تحسن جودة القرار.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>إجراءات أسرع وأكثر دقة.</li>
+
+                <li>استثمار أفضل للبيانات.</li>
+
+                <li>تحسين جودة التحليل.</li>
+
+                <li>رفع جاهزية المدرسة رقميًا.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة الابتكار والتحول الرقمي
+
+الهدف: تحديث العمل بالحلول الذكية والأتمتة.
+
+الإجراءات: ذكاء اصطناعي، أتمتة، لوحات بيانات، تجريب أدوات جديدة، تحسين التكامل.
+
+المؤشرات: عدد الحلول الذكية، نسبة الأتمتة، تقليل الزمن، جودة القرار.
+
+الأثر المتوقع: إجراءات أسرع، استثمار أفضل للبيانات، تحليل أجود، جاهزية رقمية أعلى.</textarea>
+
+        </div>
+
+      </article>
+
+      <article class="item" data-search="مراجعة دورية تحسين مستمر فجوات تحديث خطط مراجعات شهرية فصلية">
+
+        <button class="item-header" onclick="toggleItem(this)">
+
+          <div class="icon c10">🔄</div>
+
+          <div class="head-text">
+
+            <h2>خطة المراجعة الدورية والتحسين المستمر</h2>
+
+            <p>مراجعات منهجية شهرية وفصلية لتحليل الفجوات وتحديث الخطط وتنفيذ التحسينات</p>
+
+          </div>
+
+          <span class="count-badge">تحسين مستمر</span>
+
+          <span class="toggle">+</span>
+
+        </button>
+
+        <div class="item-content">
+
+          <div class="content-tools"><button class="mini-btn" onclick="copySection(this)">نسخ الخطة</button></div>
+
+          <div class="sections">
+
+            <div class="box goal">
+
+              <h3>الهدف</h3>
+
+              <ul>
+
+                <li>منع الجمود وتحفيز التطوير المستمر.</li>
+
+                <li>تحليل الفجوات أولًا بأول.</li>
+
+                <li>تحديث الخطط وفق النتائج المتحققة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box actions">
+
+              <h3>الإجراءات</h3>
+
+              <ul>
+
+                <li>إجراء مراجعات شهرية وفصلية منتظمة.</li>
+
+                <li>تحليل الانحرافات بين المستهدف والمتحقق.</li>
+
+                <li>تحديث الأولويات والخطط التشغيلية.</li>
+
+                <li>تنفيذ تحسينات متتابعة قصيرة المدى.</li>
+
+                <li>قياس أثر كل تحسين على الأداء.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box kpi">
+
+              <h3>مؤشرات القياس</h3>
+
+              <ul>
+
+                <li>عدد المراجعات المنفذة.</li>
+
+                <li>عدد التحسينات المعتمدة.</li>
+
+                <li>سرعة التطوير.</li>
+
+                <li>ارتفاع الأداء العام.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="box impact">
+
+              <h3>الأثر المتوقع</h3>
+
+              <ul>
+
+                <li>تطوير متواصل.</li>
+
+                <li>استجابة أسرع للفجوات.</li>
+
+                <li>رفع جودة النتائج بمرور الوقت.</li>
+
+                <li>مأسسة التحسين المستمر.</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <textarea class="copy-area">خطة المراجعة الدورية والتحسين المستمر
+
+الهدف: منع الجمود وتحليل الفجوات وتحديث الخطط.
+
+الإجراءات: مراجعات شهرية وفصلية، تحليل الانحرافات، تحديث الأولويات، تحسينات متتابعة، قياس أثر التحسين.
+
+المؤشرات: عدد المراجعات، عدد التحسينات، سرعة التطوير، ارتفاع الأداء العام.
+
+الأثر المتوقع: تطوير متواصل، استجابة أسرع، جودة أعلى، مأسسة التحسين.</textarea>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <section class="footer">
+
+      <strong>خلاصة الخطة</strong>
+
+      <span>تمثل هذه المنظومة إطارًا متكاملًا للتحسين والتطوير المستمر، يربط بين المتابعة والقرارات والإجراءات، ويعزز جودة التنفيذ واستدامة الأثر المؤسسي والتعليمي.</span>
+
+    </section>
+
+  </div>
+
+  <script>
+
+    function toggleItem(button){
+
+      const item = button.parentElement;
+
+      item.classList.toggle('active');
+
+      const toggle = button.querySelector('.toggle');
+
+      toggle.textContent = item.classList.contains('active') ? '−' : '+';
+
+    }
+
+    function toggleAll(open){
+
+      document.querySelectorAll('.item').forEach(item=>{
+
+        item.classList.toggle('active', open);
+
+        item.querySelector('.toggle').textContent = open ? '−' : '+';
+
+      });
+
+    }
+
+    function copySection(btn){
+
+      const area = btn.closest('.item-content').querySelector('.copy-area');
+
+      navigator.clipboard.writeText(area.value).then(()=>{
+
+        const old = btn.textContent;
+
+        btn.textContent = 'تم النسخ';
+
+        setTimeout(()=>btn.textContent = old, 1200);
+
+      });
+
+    }
+
+    function filterItems(){
+
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      document.querySelectorAll('.item').forEach(item=>{
+
+        const text = item.innerText.toLowerCase() + ' ' + item.dataset.search.toLowerCase();
+
+        item.classList.toggle('hidden', !text.includes(q));
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
